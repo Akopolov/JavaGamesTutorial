@@ -1,3 +1,7 @@
+package Moonlander;
+
+import GameFramework.Framework;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
