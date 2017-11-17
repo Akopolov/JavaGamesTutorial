@@ -1,4 +1,4 @@
-package Moonlander;
+package MoonLander;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -74,10 +74,10 @@ public class Game {
     {
         try
         {
-            URL backgroundImgUrl = this.getClass().getResource("/moon_lander/resources/images/background.jpg");
+            URL backgroundImgUrl = this.getClass().getResource("/MoonLander/resources/images/background.jpg");
             backgroundImg = ImageIO.read(backgroundImgUrl);
             
-            URL redBorderImgUrl = this.getClass().getResource("/moon_lander/resources/images/red_border.png");
+            URL redBorderImgUrl = this.getClass().getResource("/MoonLander/resources/images/red_border.png");
             redBorderImg = ImageIO.read(redBorderImgUrl);
         }
         catch (IOException ex) {

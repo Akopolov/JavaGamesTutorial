@@ -1,14 +1,8 @@
-package GameFramework;
+package PacMan;
 
-import com.sun.javaws.exceptions.CouldNotLoadArgumentException;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.URL;
 
 /**
  * Created by alekseik on 15.11.2017.
@@ -109,6 +103,7 @@ public class Framework extends Canvas {
     public void draw(Graphics2D graphics2D){
         switch (gameState){
             case MAIN_MENU:
+                graphics2D.setBackground(Color.WHITE);
                 break;
 
             case OPTIONS:

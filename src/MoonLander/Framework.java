@@ -1,4 +1,4 @@
-package Moonlander;
+package MoonLander;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -111,7 +111,7 @@ public class Framework extends Canvas {
     {
         try
         {
-            URL moonLanderMenuImgUrl = this.getClass().getResource("/moon_lander/resources/images/menu.jpg");
+            URL moonLanderMenuImgUrl = this.getClass().getResource("/MoonLander/resources/images/menu.jpg");
             moonLanderMenuImg = ImageIO.read(moonLanderMenuImgUrl);
         }
         catch (IOException ex) {

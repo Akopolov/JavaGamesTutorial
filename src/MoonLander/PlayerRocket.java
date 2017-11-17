@@ -1,4 +1,4 @@
-package Moonlander;
+package MoonLander;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -119,18 +119,18 @@ public class PlayerRocket {
     {
         try
         {
-            URL rocketImgUrl = this.getClass().getResource("/moon_lander/resources/images/rocket.png");
+            URL rocketImgUrl = this.getClass().getResource("/MoonLander/resources/images/rocket.png");
             rocketImg = ImageIO.read(rocketImgUrl);
             rocketImgWidth = rocketImg.getWidth();
             rocketImgHeight = rocketImg.getHeight();
             
-            URL rocketLandedImgUrl = this.getClass().getResource("/moon_lander/resources/images/rocket_landed.png");
+            URL rocketLandedImgUrl = this.getClass().getResource("/MoonLander/resources/images/rocket_landed.png");
             rocketLandedImg = ImageIO.read(rocketLandedImgUrl);
             
-            URL rocketCrashedImgUrl = this.getClass().getResource("/moon_lander/resources/images/rocket_crashed.png");
+            URL rocketCrashedImgUrl = this.getClass().getResource("/MoonLander/resources/images/rocket_crashed.png");
             rocketCrashedImg = ImageIO.read(rocketCrashedImgUrl);
             
-            URL rocketFireImgUrl = this.getClass().getResource("/moon_lander/resources/images/rocket_fire.png");
+            URL rocketFireImgUrl = this.getClass().getResource("/MoonLander/resources/images/rocket_fire.png");
             rocketFireImg = ImageIO.read(rocketFireImgUrl);
         }
         catch (IOException ex) {

@@ -1,4 +1,4 @@
-package Moonlander;
+package MoonLander;
 
 import java.awt.Color;
 import java.awt.Cursor;

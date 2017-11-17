@@ -1,11 +1,8 @@
-package GameFramework;
+package PacMan;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by alekseik on 15.11.2017.
- */
 public class Window extends JFrame{
     private boolean _fullScreen;
     private GraphicsDevice _graphicsDevice;
