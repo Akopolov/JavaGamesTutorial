@@ -1,4 +1,4 @@
-package PacMan;
+package DriverGame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,10 +15,13 @@ public abstract class Canvas
         extends JPanel
         implements KeyListener, MouseListener{
 
-    private static boolean[] _keyboardState = new boolean[525];
+    /**List that contains the status of the key buttons on the key bord*/
+    private static boolean[] keyboardState = new boolean[525];
 
-    private static boolean[] _mouseState = new boolean[3];
+    /**List that contains the status of the mouse buttons*/
+    private static boolean[] mouseState = new boolean[3];
 
+    /**Canvas that will draw the image and will react to buttons*/
     public Canvas(){
         this.setDoubleBuffered(true);
         this.setFocusable(true);
@@ -31,10 +34,14 @@ public abstract class Canvas
             this.setCursor(blankCursor);
         }
 
+        /**add Key bord listener to JPanel*/
         this.addKeyListener(this);
+
+        /**add Mouse listener to JPanel*/
         this.addMouseListener(this);
     }
 
+    /**This method is used in FrameWork class*/
     public abstract void draw(Graphics2D graphics2D);
 
     @Override
@@ -44,8 +51,23 @@ public abstract class Canvas
         draw(graphics2D);
     }
 
+    /**Checks if the key is pressed*/
     public static boolean keyboardKeyState(int key){
-        return _keyboardState[key];
+        return keyboardState[key];
+    }
+
+    /**Check if only 1 button pressed*/
+    public static boolean onlyThisButtonPressed(int key){
+        for(int keyNumber = 0; keyNumber < keyboardState.length; keyNumber ++){
+            if(keyNumber != key && keyboardState[keyNumber]){
+                return false;
+            }
+        }
+        if(keyboardState[key]){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
@@ -53,28 +75,31 @@ public abstract class Canvas
 
     @Override
     public void keyPressed(KeyEvent e) {
-        _keyboardState[e.getKeyCode()] = true;
+        keyboardState[e.getKeyCode()] = true;
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        _keyboardState[e.getKeyCode()] = false;
+        keyboardState[e.getKeyCode()] = false;
         keyReleasedFramework(e);
     }
 
     public abstract void keyReleasedFramework(KeyEvent e);
 
+    /**Check if tje mouse button is pressed
+     * mouseState=[0,1,2]
+     * mouseState[0] == MouseEvent.Button1*/
     public static boolean mouseButtonState(int button){
-        return _mouseState[button - 1];
+        return mouseState[button - 1];
     }
 
     private void mouseKeyStatus(MouseEvent e, boolean status){
         if(e.getButton() == MouseEvent.BUTTON1){
-            _mouseState[0] = status;
+            mouseState[0] = status;
         }else if(e.getButton() == MouseEvent.BUTTON2){
-            _mouseState[1] = status;
+            mouseState[1] = status;
         }else if(e.getButton() == MouseEvent.BUTTON3){
-            _mouseState[2] = status;
+            mouseState[2] = status;
         }
     }
 

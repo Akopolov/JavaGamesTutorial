@@ -69,7 +69,7 @@ public class Framework extends Canvas {
     
     // The actual game
     private Game game;
-    
+
     
     /**
      * Image for menu.
@@ -82,7 +82,7 @@ public class Framework extends Canvas {
         super();
         
         gameState = GameState.VISUALIZING;
-        
+
         //We start game in new thread.
         Thread gameThread = new Thread() {
             @Override
@@ -242,6 +242,7 @@ public class Framework extends Canvas {
         lastTime = System.nanoTime();
         
         game = new Game();
+
     }
     
     /**
